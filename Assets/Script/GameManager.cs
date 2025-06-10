@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerCharacterCollection playerCollection;
     [SerializeField] private CharacterGridUI characterGridUI;
 
-    private int initialCharacterCount = 20;
+    private int initialCharacterCount = 15;
 
     void Awake()
     {

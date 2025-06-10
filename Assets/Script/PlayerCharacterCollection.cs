@@ -6,18 +6,20 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Player/Owned Characters")]
 public class PlayerCharacterCollection : ScriptableObject
 {
-    public List<CharacterData> ownedCharacters;
+    public List<CharacterIconUI> ownedCharacters;
 
     public void InitializeRandomCharacters(CharacterDatabase database, int count)
     {
         ownedCharacters.Clear();
 
-        List<CharacterData> randomCharacter = new List<CharacterData>();
+        List<CharacterIconUI> randomCharacter = new List<CharacterIconUI>();
 
         // ランダムにキャラを選んで直接追加
         for (int i = 0; i < count; i++)
         {
-            CharacterData randomChar = database.characterList[Random.Range(0, database.characterList.Count)];
+            //キャラクターの最大所持数は255体
+            if (ownedCharacters.Count == 255) { Debug.Log("キャラクターをこれ以上所持できません！"); return; }
+            CharacterIconUI randomChar = database.characterList[Random.Range(0, database.characterList.Count)];
             ownedCharacters.Add(randomChar);
         }
     }

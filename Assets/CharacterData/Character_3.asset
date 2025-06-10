@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Character_3
   m_EditorClassIdentifier: 
   characterID: 2
-  name: 
+  characterName: 
   icon: {fileID: 21300000, guid: ed66a0a81de26c945a666f1351631e4a, type: 3}
   myp: {fileID: 21300000, guid: 1f5e599d440f0e244a9717afe154d2e8, type: 3}
+  hp: 50
   cost: 1

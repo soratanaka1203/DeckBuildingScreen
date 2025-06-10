@@ -4,5 +4,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Character/Character Database")]
 public class CharacterDatabase : ScriptableObject
 {
-    public List<CharacterData> characterList;
+    public List<CharacterIconUI> characterList;
 }

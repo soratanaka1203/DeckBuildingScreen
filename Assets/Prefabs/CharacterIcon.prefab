@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9052809016019964908}
   - component: {fileID: 3095825958473008643}
-  - component: {fileID: 2334326403767893673}
+  - component: {fileID: 8445821974240566214}
   m_Layer: 0
   m_Name: Charactericon
   m_TagString: Untagged
@@ -262,15 +262,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 7832193872064715310}
   costText: {fileID: 789419232244136485}
---- !u!114 &2334326403767893673
-MonoBehaviour:
+--- !u!225 &8445821974240566214
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6111677797029026348}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f033f70ec8702a84ea9782c2e4e721fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
