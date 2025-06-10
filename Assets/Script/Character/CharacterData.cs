@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="Character/CharacterData")]
-public class CharacterIconUI : ScriptableObject
+public class CharacterData : ScriptableObject
 {
     public int characterID;
     public string characterName;

@@ -5,7 +5,7 @@ public class DeckBuildingManager : MonoBehaviour
 {
     [SerializeField]private TextMeshProUGUI costCounterUI;
     [SerializeField] private GameObject CostOverMesage;
-    public List<CharacterIconUI> partyMembers = new List<CharacterIconUI>();
+    public List<CharacterData> partyMembers = new List<CharacterData>();
 
     // Start is called before the first frame update
     void Start()
@@ -13,7 +13,7 @@ public class DeckBuildingManager : MonoBehaviour
         CostOverMesage.SetActive(false);
     }
 
-    public void AddPartyMembers(CharacterIconUI data)
+    public void AddPartyMembers(CharacterData data)
     {
         partyMembers.Add(data);
         if (CheckTotalCost()) costCounterUI.color = Color.red;
