@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 public class CharacterGridUI : MonoBehaviour
 {
@@ -41,24 +42,40 @@ public class CharacterGridUI : MonoBehaviour
                 SortByCost();
                 pressCount++;
                 break;
-            case 1: SortByHP();
+            case 1: 
                 sortButtonText.text = "ソート：HP順";
-                pressCount--;
+                SortByHP();
+                pressCount++;
+                break;
+            case 2:
+                sortButtonText.text = "ソート：入手順";
+                SortByEntry();
+                pressCount = 0;
                 break;
         }       
     }
 
-    public void SortByCost()
+    private void SortByEntry()
     {
-        Sort((a, b) => a.characterData.cost.CompareTo(b.characterData.cost));
+        List<Transform> characters = children;
+       
+        for (int i = 0; i < characters.Count; i++)
+        {
+            characters[i].transform.SetSiblingIndex(i);
+        }
     }
 
-    public void SortByHP()
+    private void SortByCost()
     {
-        Sort((a, b) => a.characterData.hp.CompareTo(b.characterData.hp));
+        SortCharacter((a, b) => a.characterData.cost.CompareTo(b.characterData.cost));
     }
 
-    private void Sort(System.Comparison<CharacterIconUI> comparison)
+    private void SortByHP()
+    {
+        SortCharacter((a, b) => a.characterData.hp.CompareTo(b.characterData.hp));
+    }
+
+    private void SortCharacter(System.Comparison<CharacterIconUI> comparison)
     {
         List<CharacterIconUI> characters = new List<CharacterIconUI>();
 
