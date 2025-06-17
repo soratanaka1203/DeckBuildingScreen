@@ -8,7 +8,8 @@ using UnityEngine.EventSystems;
 public class CharacterIconUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image iconImage;
-    public TextMeshProUGUI costText;
+    [SerializeField]private TextMeshProUGUI costText;
+    [SerializeField]private TextMeshProUGUI hpText;
 
     public CharacterData characterData;
 
@@ -27,6 +28,8 @@ public class CharacterIconUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         characterData = data;
         iconImage.sprite = data.icon;
         costText.text = "コスト：" + data.cost;
+        hpText.text = "HP:" + data.hp;
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
